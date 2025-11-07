@@ -79,23 +79,17 @@
             min-height: 500px;
             display: flex;
             align-items: center;
-            background: linear-gradient(135deg, rgba(45, 122, 62, 0.9) 0%, rgba(58, 148, 80, 0.9) 100%);
+            background: linear-gradient(135deg, rgba(45, 122, 62, 0.85) 0%, rgba(58, 148, 80, 0.85) 100%), 
+                        url('image1.png') center/cover no-repeat;
             color: white;
             overflow: hidden;
         }
 
-        /* TO ADD A BACKGROUND IMAGE TO THE HERO SECTION:
-           1. Save your image as "hero-image.jpg" in the same folder
-           2. Recommended image size: 1920px x 1080px (or 1600px x 900px minimum)
-           3. Remove the comment marks below (delete the forward-slash-asterisk and asterisk-forward-slash)
-           4. Adjust the opacity by changing the "0.85" values (0.7 = more transparent, 0.95 = less transparent)
-        */
-        
-        /* 
-        .hero {
-            background: linear-gradient(135deg, rgba(45, 122, 62, 0.85) 0%, rgba(58, 148, 80, 0.85) 100%), 
-                        url('hero-image.jpg') center/cover no-repeat;
-        }
+        /* TO ADJUST IMAGE TRANSPARENCY:
+           Change the "0.85" values above:
+           - 0.7 = More image shows through (30% transparent green)
+           - 0.85 = Current setting (15% transparent green)
+           - 0.95 = Less image shows through (5% transparent green)
         */
 
         .hero::before {
@@ -383,39 +377,6 @@
             color: #2d7a3e;
         }
 
-        /* Image Gallery Section */
-        .gallery-section {
-            padding: 5rem 3rem;
-            background: white;
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            max-width: 1400px;
-            margin: 3rem auto 0;
-        }
-
-        .gallery-item {
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-
-        .gallery-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            display: block;
-        }
-
         .instagram-button {
             display: inline-block;
             margin-top: 2rem;
@@ -619,19 +580,6 @@
             <div class="area-box">SO45</div>
             <div class="area-box">SO40</div>
             <div class="area-box">SO42</div>
-        </div>
-    </section>
-
-    <!-- Image Gallery Section -->
-    <section class="gallery-section">
-        <div class="section-label">OUR WORK</div>
-        <h2 class="section-title">See Us in Action</h2>
-        <p class="section-description">A glimpse into the compassionate care we provide.</p>
-        
-        <div class="gallery-grid">
-            <div class="gallery-item">
-                <img src="image1.png" alt="ILEX Homecare service">
-            </div>
         </div>
     </section>
 
