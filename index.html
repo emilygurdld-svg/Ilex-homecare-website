@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ILEX Homecare - Professional Domiciliary Care Services Southampton</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.7;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            background: white;
+            padding: 1.2rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo img {
+            height: 60px;
+            width: auto;
+        }
+
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #2d7a3e;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-contact {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-contact a {
+            color: #555;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav-contact a:hover {
+            color: #2d7a3e;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 70vh;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(45, 122, 62, 0.9) 0%, rgba(58, 148, 80, 0.9) 100%);
+            color: white;
+            overflow: hidden;
+        }
+
+        /* TO ADD A BACKGROUND IMAGE TO THE HERO SECTION:
+           1. Save your image as "hero-image.jpg" in the same folder
+           2. Recommended image size: 1920px x 1080px (or 1600px x 900px minimum)
+           3. Remove the comment marks below (delete the forward-slash-asterisk and asterisk-forward-slash)
+           4. Adjust the opacity by changing the "0.85" values (0.7 = more transparent, 0.95 = less transparent)
+        */
+        
+        /* 
+        .hero {
+            background: linear-gradient(135deg, rgba(45, 122, 62, 0.85) 0%, rgba(58, 148, 80, 0.85) 100%), 
+                        url('hero-image.jpg') center/cover no-repeat;
+        }
+        */
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="none" width="1200" height="800"/><circle fill="rgba(255,255,255,0.03)" cx="100" cy="100" r="80"/><circle fill="rgba(255,255,255,0.03)" cx="1000" cy="200" r="120"/><circle fill="rgba(255,255,255,0.05)" cx="800" cy="600" r="100"/></svg>');
+            opacity: 0.4;
+        }
+
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 3rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 1.5rem;
+            opacity: 0.95;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            max-width: 800px;
+        }
+
+        .hero-description {
+            font-size: 1.25rem;
+            line-height: 1.8;
+            max-width: 700px;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #2d7a3e;
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(0,0,0,0.25);
+        }
+
+        /* What We Do Section */
+        .what-we-do {
+            padding: 5rem 3rem;
+            background: white;
+            text-align: center;
+        }
+
+        .section-label {
+            color: #2d7a3e;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            color: #222;
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
+
+        .section-description {
+            max-width: 900px;
+            margin: 0 auto 4rem;
+            font-size: 1.15rem;
+            line-height: 1.9;
+            color: #555;
+        }
+
+        /* Three Column Section */
+        .three-columns {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 3rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .column {
+            text-align: left;
+        }
+
+        .column h3 {
+            font-size: 1.4rem;
+            color: #2d7a3e;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .column p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        /* Services Grid */
+        .services-section {
+            padding: 5rem 3rem;
+            background: #f8f9fb;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 3rem auto 0;
+        }
+
+        .service-item {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.06);
+            transition: all 0.3s;
+        }
+
+        .service-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+        }
+
+        .service-item h3 {
+            font-size: 1.4rem;
+            color: #2d7a3e;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .service-item p {
+            color: #666;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        /* Credentials Section */
+        .credentials-section {
+            padding: 5rem 3rem;
+            background: white;
+        }
+
+        .credentials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            max-width: 1400px;
+            margin: 3rem auto 0;
+        }
+
+        .credential-item {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .credential-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #2d7a3e, #3a9450);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .credential-item h3 {
+            font-size: 1.3rem;
+            color: #222;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+        }
+
+        .credential-item p {
+            color: #666;
+            line-height: 1.7;
+            font-size: 1.05rem;
+        }
+
+        /* Coverage Section */
+        .coverage-section {
+            padding: 5rem 3rem;
+            background: #2d7a3e;
+            color: white;
+            text-align: center;
+        }
+
+        .coverage-section .section-title {
+            color: white;
+        }
+
+        .coverage-section .section-description {
+            color: rgba(255,255,255,0.9);
+        }
+
+        .coverage-areas {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+        }
+
+        .area-box {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            padding: 2rem 3rem;
+            border-radius: 10px;
+            font-size: 1.8rem;
+            font-weight: 700;
+            border: 2px solid rgba(255,255,255,0.3);
+            transition: all 0.3s;
+        }
+
+        .area-box:hover {
+            background: rgba(255,255,255,0.25);
+            transform: scale(1.05);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 5rem 3rem;
+            background: white;
+            text-align: center;
+        }
+
+        .contact-box {
+            max-width: 700px;
+            margin: 3rem auto 0;
+            background: #f8f9fb;
+            padding: 3rem;
+            border-radius: 12px;
+        }
+
+        .contact-item {
+            margin: 2rem 0;
+        }
+
+        .contact-item h3 {
+            color: #2d7a3e;
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .contact-item a {
+            color: #333;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+
+        .contact-item a:hover {
+            color: #2d7a3e;
+        }
+
+        /* Image Gallery Section */
+        .gallery-section {
+            padding: 5rem 3rem;
+            background: white;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 3rem auto 0;
+        }
+
+        .gallery-item {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .instagram-button {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 1rem 2.5rem;
+            background: linear-gradient(135deg, #E1306C, #C13584, #833AB4, #5851DB, #405DE6);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .instagram-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(0,0,0,0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: #1a4d26;
+            color: white;
+            padding: 3rem;
+            text-align: center;
+        }
+
+        footer p {
+            opacity: 0.85;
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 0 1.5rem;
+            }
+
+            .nav-contact {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .hero {
+                height: auto;
+                padding: 4rem 0;
+            }
+
+            .hero-content {
+                padding: 0 1.5rem;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-description {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .what-we-do,
+            .services-section,
+            .credentials-section,
+            .coverage-section,
+            .contact-section {
+                padding: 3rem 1.5rem;
+            }
+
+            .three-columns,
+            .services-grid,
+            .credentials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <img src="logo.png" alt="ILEX Homecare Logo">
+                <div class="logo-text">ILEX Homecare</div>
+            </div>
+            <div class="nav-contact">
+                <a href="mailto:ilexhomecare@gmail.com">ilexhomecare@gmail.com</a>
+                <a href="https://www.instagram.com/ilexhomecare" target="_blank">Instagram</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-subtitle">Professional Care Services</div>
+            <h1>Committed to Delivering Exceptional Care</h1>
+            <p class="hero-description">Providing compassionate, personalised domiciliary care services with over 15 years of experience. Helping you or your loved ones maintain independence and dignity in the comfort of home.</p>
+            <a href="mailto:ilexhomecare@gmail.com" class="cta-button">Get in Touch</a>
+        </div>
+    </section>
+
+    <!-- What We Do -->
+    <section class="what-we-do">
+        <div class="section-label">WHAT WE DO</div>
+        <h2 class="section-title">Your Trusted Care Provider</h2>
+        <p class="section-description">ILEX Homecare is a trusted provider of domiciliary care services, dedicated to supporting individuals in Southampton and surrounding areas. Choose our services with confidence.</p>
+        
+        <div class="three-columns">
+            <div class="column">
+                <h3>Respecting</h3>
+                <p>Dedicated to treating each individual with the dignity, understanding, and respect they deserve, ensuring compassionate care in every interaction.</p>
+            </div>
+            <div class="column">
+                <h3>Personalised</h3>
+                <p>Tailored care services designed to meet your unique needs, enabling you to live a dignified and fulfilling life in the comfort of your own home.</p>
+            </div>
+            <div class="column">
+                <h3>Experienced</h3>
+                <p>With over 15 years of professional experience, enhanced DBS checks, and full insurance, you can trust in the quality and safety of our care.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section">
+        <div class="section-label">OUR SERVICES</div>
+        <h2 class="section-title">Comprehensive Care Services</h2>
+        <p class="section-description">From personal care to household support, we offer a wide range of services tailored to your individual needs.</p>
+        
+        <div class="services-grid">
+            <div class="service-item">
+                <h3>Personal Care</h3>
+                <p>Compassionate assistance with daily personal care routines, maintaining dignity and promoting independence in a respectful manner.</p>
+            </div>
+            <div class="service-item">
+                <h3>Companionship</h3>
+                <p>Friendly, engaging companionship to reduce isolation, promote wellbeing, and provide meaningful social interaction.</p>
+            </div>
+            <div class="service-item">
+                <h3>Domestic Support</h3>
+                <p>Professional housekeeping and cleaning services to maintain a comfortable, safe, and hygienic living environment.</p>
+            </div>
+            <div class="service-item">
+                <h3>Shopping & Errands</h3>
+                <p>Assistance with grocery shopping, pharmacy visits, and other essential errands to ensure you have everything you need.</p>
+            </div>
+            <div class="service-item">
+                <h3>Laundry Services</h3>
+                <p>Complete laundry and ironing services to keep your clothing and linens fresh and well-maintained.</p>
+            </div>
+            <div class="service-item">
+                <h3>Flexible Care Options</h3>
+                <p>Available for regular care schedules, holiday cover, and ad hoc services to suit your changing needs and lifestyle.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Credentials Section -->
+    <section class="credentials-section">
+        <div class="section-label">PROFESSIONAL CREDENTIALS</div>
+        <h2 class="section-title">Qualified, Trusted, and Reliable</h2>
+        
+        <div class="credentials-grid">
+            <div class="credential-item">
+                <div class="credential-icon">✓</div>
+                <h3>15+ Years Experience</h3>
+                <p>Over fifteen years of dedicated professional care experience delivering exceptional support.</p>
+            </div>
+            <div class="credential-item">
+                <div class="credential-icon">🛡</div>
+                <h3>Enhanced DBS Checked</h3>
+                <p>Fully vetted and background checked for complete peace of mind and safety.</p>
+            </div>
+            <div class="credential-item">
+                <div class="credential-icon">◆</div>
+                <h3>Full Driving License</h3>
+                <p>Mobile and flexible service including transport assistance and errands.</p>
+            </div>
+            <div class="credential-item">
+                <div class="credential-icon">●</div>
+                <h3>Fully Insured</h3>
+                <p>Comprehensive public liability insurance for your complete protection and confidence.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coverage Section -->
+    <section class="coverage-section">
+        <div class="section-label" style="color: rgba(255,255,255,0.9);">AREAS WE SERVE</div>
+        <h2 class="section-title">Covering Southampton Areas</h2>
+        <p class="section-description">Proudly providing professional care services across the following postcodes.</p>
+        
+        <div class="coverage-areas">
+            <div class="area-box">SO45</div>
+            <div class="area-box">SO40</div>
+            <div class="area-box">SO42</div>
+        </div>
+    </section>
+
+    <!-- Image Gallery Section -->
+    <section class="gallery-section">
+        <div class="section-label">OUR WORK</div>
+        <h2 class="section-title">See Us in Action</h2>
+        <p class="section-description">A glimpse into the compassionate care we provide.</p>
+        
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="image1.png" alt="ILEX Homecare service">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="section-label">GET IN TOUCH</div>
+        <h2 class="section-title">Contact ILEX Homecare</h2>
+        <p class="section-description">Whether you need regular care, holiday cover, or ad hoc support, we're here to help. Get in touch today for a no-obligation consultation.</p>
+        
+        <div class="contact-box">
+            <div class="contact-item">
+                <h3>Email</h3>
+                <a href="mailto:ilexhomecare@gmail.com">ilexhomecare@gmail.com</a>
+            </div>
+            
+            <div class="contact-item">
+                <h3>Connect With Us</h3>
+                <a href="https://www.instagram.com/ilexhomecare" target="_blank" class="instagram-button">
+                    Follow us on Instagram
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 ILEX Homecare. All rights reserved.</p>
+        <p style="margin-top: 0.8rem;">Professional domiciliary care services in Southampton<br>Enhanced DBS Checked | Fully Insured | 15+ Years Experience</p>
+    </footer>
+</body>
+</html>
